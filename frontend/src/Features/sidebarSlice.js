@@ -21,7 +21,7 @@ export const refreshSidebar = createAsyncThunk(
     };
 
     try {
-      const response = await axios.get('http://localhost:5000/chat/', config);
+      const response = await axios.get('https://chat-app-mern-server-liard.vercel.app/chat/', config);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
