@@ -13,7 +13,7 @@ import {io} from 'socket.io-client'
 import { light } from '@mui/material/styles/createPalette';
 
 
-const ENDPOINT = 'http://localhost:5000'
+const ENDPOINT = 'https://chat-app-mern-server-liard.vercel.app/'
 var socket, chat;
 
 export default function ChatArea() {
@@ -36,7 +36,7 @@ export default function ChatArea() {
       }
     }
    
-    axios.post("http://localhost:5000/message/", {
+    axios.post("https://chat-app-mern-server-liard.vercel.app/message/", {
       content: messageContent,
       chatId: chat_id
     }, config)
@@ -80,7 +80,7 @@ useEffect(() => {
 
   // console.log(chat_id);
 
-  axios.get(`http://localhost:5000/message/${chat_id}`, config)
+  axios.get(`https://chat-app-mern-server-liard.vercel.app/message/${chat_id}`, config)
     .then(response => {
       if (response && response.data) {
         // Proceed with handling the data
