@@ -54,7 +54,7 @@ export default function Signup() {
           'Content-Type': 'application/json',
         },
       };
-      const response = await axios.post('http://localhost:5000/user/register/', data, config);
+      const response = await axios.post('https://chat-app-mern-server-liard.vercel.app/user/register/', data, config);
       // console.log('Signup:', response);
 
       if (response) {
