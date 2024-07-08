@@ -32,7 +32,7 @@ export default function Users() {
         Authorization: `Bearer ${userData.data.token}`
       }
     };
-    axios.get("http://localhost:5000/user/fetchUsers", config).then((data) => {
+    axios.get("https://chat-app-mern-server-liard.vercel.app/user/fetchUsers", config).then((data) => {
       // console.log("User Data from API ", data);
       setUsers(data.data);
     });
@@ -45,7 +45,7 @@ export default function Users() {
         Authorization: `Bearer ${userData.data.token}`
       }
     };
-    axios.post("http://localhost:5000/chat/", { userId: user._id }, config)
+    axios.post("https://chat-app-mern-server-liard.vercel.app/chat/", { userId: user._id }, config)
       .then(() => {
         dispatch(addUser(user)); 
         console.log("Updated Sidebar Data:", sidebarData);
@@ -93,7 +93,7 @@ export default function Users() {
                             Authorization: `Bearer ${userData.data.token}`
                         }
                     }
-                    axios.post("http://localhost:5000/chat/", {
+                    axios.post("https://chat-app-mern-server-liard.vercel.app/chat/", {
                       userId: user._id
                   }, config)
                   .then(response => {
