@@ -33,7 +33,7 @@ export default function Groups() {
             }
         };
 
-        axios.get("http://localhost:5000/chat/fetchGroups", config)
+        axios.get("https://chat-app-mern-server-liard.vercel.app/chat/fetchGroups", config)
             .then(response => {
                 setGroups(response.data);
             })
@@ -94,7 +94,7 @@ export default function Groups() {
                                         Authorization: `Bearer ${userData.data.token}`
                                     }
                                 };
-                                axios.put("http://localhost:5000/chat/addSelfToGroup", {
+                                axios.put("https://chat-app-mern-server-liard.vercel.app/chat/addSelfToGroup", {
                                     chatId: user._id,
                                     userId: userData.data.id,
                                 }, config)
