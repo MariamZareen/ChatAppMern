@@ -36,7 +36,7 @@ export default function Login() {
           'Content-type': 'application/json',
         },
       };
-      const response = await axios.post('http://localhost:5000/user/login', data, config);
+      const response = await axios.post('https://chat-app-mern-server-liard.vercel.app/user/login', data, config);
       // console.log('Login: ', response);
       setLogInStatus({ msg: 'Success', key: Math.random() });
       // setLoading(false);
