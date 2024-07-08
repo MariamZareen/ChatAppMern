@@ -29,7 +29,7 @@ export default function CreateGroup() {
         Authorization: `Bearer ${user.token}`
       }
     };
-    axios.post("http://localhost:5000/chat/createGroup", {
+    axios.post("https://chat-app-mern-server-liard.vercel.app/chat/createGroup", {
       name: groupName,
       users: [user.id] 
     }, config)
