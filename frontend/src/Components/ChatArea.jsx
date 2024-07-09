@@ -11,7 +11,7 @@ import { MyContext } from './MyContext';
 import { io } from 'socket.io-client';
 import CryptoJS from 'crypto-js';
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'https://chat-app-mern-server-liard.vercel.app/';
 var socket;
 
 export default function ChatArea() {
@@ -48,7 +48,7 @@ export default function ChatArea() {
 
     const encryptedMessage = encryptMessage(messageContent);
 
-    axios.post('http://localhost:5000/message/', {
+    axios.post('https://chat-app-mern-server-liard.vercel.app/message/', {
       content: encryptedMessage,
       chatId: chat_id
     }, config)
@@ -105,7 +105,7 @@ export default function ChatArea() {
         console.error('Error in chat area Axios:', error);
       });
 
-    axios.get(`http://localhost:5000/chat/${chat_id}`, config)
+    axios.get(`https://chat-app-mern-server-liard.vercel.app/chat/${chat_id}`, config)
       .then(response => {
         if (response && response.data) {
           if (response.data.isGroupChat) {
