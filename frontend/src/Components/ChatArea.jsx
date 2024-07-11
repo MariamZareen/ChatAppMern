@@ -88,7 +88,7 @@ export default function ChatArea() {
       }
     };
 
-    axios.get(`http://localhost:5000/message/${chat_id}`, config)
+    axios.get(`https://chat-app-mern-server-liard.vercel.app/message/${chat_id}`, config)
       .then(response => {
         if (response && response.data) {
           const decryptedMessages = response.data.map(message => {
